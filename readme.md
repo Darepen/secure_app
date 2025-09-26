@@ -76,14 +76,14 @@ If someone else has made changes and pushed them to GitHub, you'll want to get t
 
 ```bash
 git pull
-```It's a good habit to `pull` before you start working to make sure you have the latest version of the code.
+```
+It's a good habit to `pull` before you start working to make sure you have the latest version of the code.
 
 ## How to Improve This Project
-
+### You don't have to do all of these btw hehe
 This project has a great start. Here are some suggestions to improve its structure, security, and functionality.
 
-### 1. Enhance Security (Live up to the name!)
-
+### 1. Enhance Security
 *   **Prevent SQL Injection:** In your `db_config.php` and any files that talk to the database, make sure you are using prepared statements with PDO or MySQLi. This is the single most important thing to prevent database attacks. Never put variables directly into your SQL queries.
 *   **Secure Passwords:** In `src/lib/auth.php`, when a user registers, use `password_hash()` to store their password. When they log in, use `password_verify()` to check it. Never store passwords as plain text.
 *   **Sanitize User Input:** Use the functions in your `src/lib/security.php` file to clean all data that comes from users (forms, URL parameters, etc.). A good function to use for preventing XSS attacks is `htmlspecialchars()`. Every time you `echo` user data, wrap it in this function.
@@ -99,4 +99,3 @@ This project has a great start. Here are some suggestions to improve its structu
 *   **Use Composer:** Composer is a tool for managing dependencies in PHP projects. Even if you aren't using external libraries now, setting up Composer will make it easy to add them later. It also provides a powerful autoloader, which can automatically load your class files for you.
 *   **Configuration Management:** Store sensitive information like database passwords in an environment file (a `.env` file) instead of directly in `db_config.php`. This is more secure because you can add the `.env` file to your `.gitignore` so you don't accidentally commit secrets to the repository.
 
-Good luck with the project
